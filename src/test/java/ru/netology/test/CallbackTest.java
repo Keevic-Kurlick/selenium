@@ -35,13 +35,12 @@ public class CallbackTest {
     @Test
     public void shouldTest(){
         driver.get("http://localhost:9999");
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Андрей");
-        elements.get(1).sendKeys("+79843333344");
+        driver.findElement(By.cssSelector("[type=\"text\"]")).sendKeys("Андрей");
+        driver.findElement(By.cssSelector("[type=\"tel\"]")).sendKeys("+79998883344");
 
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.tagName("button")).click();
-        String text = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText();
+        String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 }
