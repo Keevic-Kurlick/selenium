@@ -46,7 +46,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
-        assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
+        assertEquals("Ваша заявка успешно отправлена! менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
     @Test
