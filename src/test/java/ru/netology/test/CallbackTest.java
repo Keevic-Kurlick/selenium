@@ -18,7 +18,6 @@ public class CallbackTest {
 
     @BeforeAll
     static void setUp() {
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
         WebDriverManager.chromedriver().setup();
     }
 
@@ -29,6 +28,7 @@ public class CallbackTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
     @AfterEach
@@ -39,7 +39,6 @@ public class CallbackTest {
 
     @Test
     public void shouldTestPositiveCase() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Андрей");
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79998883344");
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
