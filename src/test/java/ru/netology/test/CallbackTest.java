@@ -82,7 +82,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
         String sub = driver.findElement(By.cssSelector("[data-test-id=\"phone\"] .input__sub")).getText();
-        assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", sub);
+        assertEquals("Телефон указан неверно. Должно быть 11 цифр, например", sub);
     }
 
     @Test
