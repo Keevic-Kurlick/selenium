@@ -40,7 +40,7 @@ public class CallbackTest {
     @Test
     public void shouldTestPositiveCase() {
         driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Андрей");
-        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+799988834");
+        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79998883344");
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=\"order-success\"]")).getText();
