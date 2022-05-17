@@ -64,7 +64,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
         String sub = driver.findElement(By.cssSelector("[data-test-id=\"phone\"] .input__sub")).getText();
-        assertEquals("Поле необязательно для заполнения", sub);
+        assertEquals("Поле обязательно для заполнения", sub);
     }
 
     @Test
