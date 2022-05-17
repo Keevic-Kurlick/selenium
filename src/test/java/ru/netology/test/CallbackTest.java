@@ -82,7 +82,15 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
         String sub = driver.findElement(By.cssSelector("[data-test-id=\"phone\"] .input__sub")).getText();
-        assertEquals("Телефон указан неверно. Должно быть 11 цифр, например", sub);
+        assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", sub);
+    }
+
+    @Test
+    public void shouldTestValidationEmptyCheckbox() {
+        driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Андрей");
+        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79012345678");
+        driver.findElement(By.tagName("button")).click();
+        assertNotNull(driver.findElement(By.className("input_invalid1")));
     }
 
     @Test
@@ -91,12 +99,5 @@ public class CallbackTest {
         driver.findElement(By.tagName("button")).click();
         String sub = driver.findElement(By.cssSelector("[data-test-id=\"name\"] .input__sub")).getText();
         assertEquals("Поле обязательно для заполнения", sub);
-    }
-    @Test
-    public void shouldTestValidationEmptyCheckbox() {
-        driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Андрей");
-        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79012345678");
-        driver.findElement(By.tagName("button")).click();
-        assertNotNull(driver.findElement(By.className("input_invalid")));
     }
 }
