@@ -67,7 +67,7 @@ public class CallbackTest {
     }
     @Test
     public void shouldTestValidationInvalidName() {
-        driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("John");
+        driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Виктор");
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79998883344");
         driver.findElement(By.cssSelector("[data-test-id=\"agreement\"]")).click();
         driver.findElement(By.tagName("button")).click();
@@ -90,7 +90,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=\"name\"] input")).sendKeys("Андрей");
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79012345678");
         driver.findElement(By.tagName("button")).click();
-        assertNotNull(driver.findElement(By.className("input_invalid1")));
+        assertNotNull(driver.findElement(By.className("input_invalid")));
     }
 
     @Test
